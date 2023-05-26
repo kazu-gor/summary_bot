@@ -1,4 +1,3 @@
-from sre_compile import SRE_FLAG_TEMPLATE
 import requests
 import re
 import os
@@ -27,8 +26,6 @@ class Slack_bot:
 
 
 def get_urls(url):
-    URL = "https://techcrunch.com/"
-
     # HTTP GETリクエストを送信
     response = requests.get(URL)
 
@@ -38,7 +35,6 @@ def get_urls(url):
         soup = BeautifulSoup(response.text, "html.parser")
 
         # パースしたHTMLから特定の要素を取得する例
-        title = soup.title  # <title>タグの内容を取得
         links = soup.find_all("a")  # <a>タグのリンクを全て取得
 
         url_list = list()
@@ -68,7 +64,6 @@ def get_summary(url_list):
 
 if __name__ == '__main__':
 
-    # techcrunchのURLリストを取得
     URL = "https://techcrunch.com/"
     url_list = get_urls(URL)
 
