@@ -36,6 +36,8 @@ if __name__ == '__main__':
     url_list = get_urls(URL)
 ```
 
+It is convenient to use cron.
+
 ## License
 
 MIT
